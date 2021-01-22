@@ -1,0 +1,32 @@
+# ----------------------------------------------------------------------------
+#
+# Package             : click
+# Source Repo         : https://github.com/pallets/click
+# Travis Job Link     : https://travis-ci.com/github/asellappen/click/
+# Created travis.yml  : Yes
+# Maintainer          : Arumugam N S <asellappen@yahoo.com> / Priya Seth<sethp@us.ibm.com>
+#
+# Script License      : Apache License, Version 2 or later
+#
+# ----------------------------------------------------------------------------
+language: python
+sudo: required
+dist: bionic
+
+arch:
+  - amd64
+  - ppc64le
+
+python:
+  - 3.7
+  - 3.8
+
+install:
+  - pip install -r requirements/docs.txt
+  - python setup.py install
+  - pip install --no-deps -e .
+  - travis_retry pip install tox
+
+script:
+  - travis_retry tox
+  
