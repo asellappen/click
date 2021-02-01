@@ -26,6 +26,12 @@ matrix:
       env: TOXENV=py37
       arch: ppc64le
       sudo: true
+    - python: 3.9
+      env: TOXENV=style
+      sudo: true
+    - python: 3.9
+      env: TOXENV=docs
+      sudo: true
     - python: 3.8
       env: TOXENV=py38
       sudo: true
