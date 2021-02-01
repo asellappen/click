@@ -30,6 +30,14 @@ matrix:
       env: TOXENV=py38
       sudo: true
       arch: ppc64le
+    - python: 3.9
+      env: TOXENV=style
+      sudo: true
+      arch: ppc64le
+    - python: 3.9
+      env: TOXENV=docs
+      sudo: true
+      arch: ppc64le
 
 install:
   - pip install -r requirements/docs.txt
